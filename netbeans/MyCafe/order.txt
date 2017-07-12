@@ -6,3 +6,4 @@ You ordered porridgeCoffee and Mayo.
 You ordered caesar saladTea and Butter.
 
 You ordered sausagesTea and Butter.
+You ordered sausagesCoffee and Butter.

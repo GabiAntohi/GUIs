@@ -7,12 +7,14 @@
 package iceCreamShop;
 
 import java.awt.Color;
+import javax.swing.ButtonModel;
 
 /**
  *
  * @author dsd10
  */
 public class MyIceCreamShop extends javax.swing.JFrame {
+    private static String price;
 
     /**
      * Creates new form MyIceCreamShop
@@ -20,6 +22,10 @@ public class MyIceCreamShop extends javax.swing.JFrame {
     public MyIceCreamShop() {
         initComponents();
         getContentPane().setBackground(new Color(246,242,242));
+        rbChocolate.setActionCommand("Chocolate");
+        rbVanilla.setActionCommand("Vanilla");
+        rbStrawberry.setActionCommand("Strawberry");
+        
     }
 
     /**
@@ -34,67 +40,70 @@ public class MyIceCreamShop extends javax.swing.JFrame {
         bgroupFlavour = new javax.swing.ButtonGroup();
         bgroupChoice = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        pnlChoice = new javax.swing.JPanel();
+        rbCone = new javax.swing.JRadioButton();
+        rbSundae = new javax.swing.JRadioButton();
+        rbBananaSplit = new javax.swing.JRadioButton();
+        btnCone = new javax.swing.JButton();
+        btnSundae = new javax.swing.JButton();
+        btnBananaSplit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        pnlFlavour = new javax.swing.JPanel();
+        cbFlake = new javax.swing.JCheckBox();
+        cbSprinkles = new javax.swing.JCheckBox();
+        cbSyrup = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        pnlIceCream = new javax.swing.JPanel();
+        rbChocolate = new javax.swing.JRadioButton();
+        rbVanilla = new javax.swing.JRadioButton();
+        rbStrawberry = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
+        btnExit = new javax.swing.JButton();
+        btnPlaceOrder = new javax.swing.JButton();
+        lblPrice = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Vivaldi", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 0, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Please Place Your Order");
 
-        jPanel1.setBackground(new java.awt.Color(246, 242, 242));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED)), "Ice Cream Choice", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18), new java.awt.Color(204, 0, 51))); // NOI18N
+        pnlChoice.setBackground(new java.awt.Color(246, 242, 242));
+        pnlChoice.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED)), "Ice Cream Choice", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 18), new java.awt.Color(204, 0, 51))); // NOI18N
 
-        bgroupChoice.add(jRadioButton4);
-        jRadioButton4.setText("Cone");
+        bgroupChoice.add(rbCone);
+        rbCone.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rbCone.setText("Cone");
 
-        bgroupChoice.add(jRadioButton5);
-        jRadioButton5.setText("Sundae");
+        bgroupChoice.add(rbSundae);
+        rbSundae.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rbSundae.setSelected(true);
+        rbSundae.setText("Sundae");
 
-        bgroupChoice.add(jRadioButton6);
-        jRadioButton6.setText("Banana Split");
+        bgroupChoice.add(rbBananaSplit);
+        rbBananaSplit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rbBananaSplit.setText("Banana Split");
 
-        jButton1.setBackground(new java.awt.Color(246, 242, 242));
-        jButton1.setForeground(new java.awt.Color(0, 0, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cone.png"))); // NOI18N
-        jButton1.setText("1.50");
-        jButton1.setAlignmentX(1.0F);
-        jButton1.setAlignmentY(0.0F);
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setSelected(true);
+        btnCone.setBackground(new java.awt.Color(246, 242, 242));
+        btnCone.setForeground(new java.awt.Color(0, 0, 255));
+        btnCone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cone.png"))); // NOI18N
+        btnCone.setText("1.50");
+        btnCone.setAlignmentX(1.0F);
+        btnCone.setAlignmentY(0.0F);
+        btnCone.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCone.setSelected(true);
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sundae.png"))); // NOI18N
-        jButton2.setActionCommand("");
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSundae.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sundae.png"))); // NOI18N
+        btnSundae.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bananasplit.jpg"))); // NOI18N
-        jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBananaSplit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bananasplit.jpg"))); // NOI18N
+        btnBananaSplit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 102));
@@ -108,31 +117,31 @@ public class MyIceCreamShop extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 0, 102));
         jLabel4.setText("€ 2.50");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlChoiceLayout = new javax.swing.GroupLayout(pnlChoice);
+        pnlChoice.setLayout(pnlChoiceLayout);
+        pnlChoiceLayout.setHorizontalGroup(
+            pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlChoiceLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCone, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlChoiceLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jRadioButton4)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(rbCone)))
+                .addGroup(pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlChoiceLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSundae, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBananaSplit, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(27, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(pnlChoiceLayout.createSequentialGroup()
                         .addGap(66, 66, 66)
-                        .addComponent(jRadioButton5)
+                        .addComponent(rbSundae)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton6)
+                        .addComponent(rbBananaSplit)
                         .addGap(95, 95, 95))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(pnlChoiceLayout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(jLabel2)
                 .addGap(120, 120, 120)
@@ -141,40 +150,43 @@ public class MyIceCreamShop extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(108, 108, 108))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        pnlChoiceLayout.setVerticalGroup(
+            pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlChoiceLayout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlChoiceLayout.createSequentialGroup()
+                        .addGroup(pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnSundae, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBananaSplit, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton6)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbSundae)
+                            .addComponent(rbBananaSplit)))
+                    .addGroup(pnlChoiceLayout.createSequentialGroup()
+                        .addComponent(btnCone, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton4)))
+                        .addComponent(rbCone)))
                 .addGap(19, 19, 19))
         );
 
-        jPanel2.setBackground(new java.awt.Color(246, 242, 242));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Ice Cream Flavour", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(204, 0, 51))); // NOI18N
-        jPanel2.setAutoscrolls(true);
+        pnlFlavour.setBackground(new java.awt.Color(246, 242, 242));
+        pnlFlavour.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Ice Cream Flavour", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(204, 0, 51))); // NOI18N
+        pnlFlavour.setAutoscrolls(true);
 
-        jCheckBox1.setText("Flake");
+        cbFlake.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cbFlake.setText("Flake");
 
-        jCheckBox2.setText("Sprinkles");
+        cbSprinkles.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cbSprinkles.setText("Sprinkles");
 
-        jCheckBox3.setText("Syrup");
+        cbSyrup.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cbSyrup.setText("Syrup");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 102));
@@ -188,80 +200,83 @@ public class MyIceCreamShop extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 0, 102));
         jLabel7.setText("€ 0.20");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlFlavourLayout = new javax.swing.GroupLayout(pnlFlavour);
+        pnlFlavour.setLayout(pnlFlavourLayout);
+        pnlFlavourLayout.setHorizontalGroup(
+            pnlFlavourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFlavourLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox3)
+                .addGroup(pnlFlavourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFlavourLayout.createSequentialGroup()
+                        .addComponent(cbSyrup)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFlavourLayout.createSequentialGroup()
+                        .addComponent(cbSprinkles)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(jLabel6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFlavourLayout.createSequentialGroup()
+                        .addComponent(cbFlake)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)))
                 .addGap(22, 22, 22))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlFlavourLayout.setVerticalGroup(
+            pnlFlavourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFlavourLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
+                .addGroup(pnlFlavourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbFlake)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
+                .addGroup(pnlFlavourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbSprinkles)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
+                .addGroup(pnlFlavourLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbSyrup)
                     .addComponent(jLabel7))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(246, 242, 242));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Ice Cream Flavour", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(204, 0, 51))); // NOI18N
-        jPanel3.setAutoscrolls(true);
+        pnlIceCream.setBackground(new java.awt.Color(246, 242, 242));
+        pnlIceCream.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Ice Cream Flavour", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 14), new java.awt.Color(204, 0, 51))); // NOI18N
+        pnlIceCream.setAutoscrolls(true);
 
-        bgroupFlavour.add(jRadioButton1);
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Chocolate");
+        bgroupFlavour.add(rbChocolate);
+        rbChocolate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rbChocolate.setSelected(true);
+        rbChocolate.setText("Chocolate");
 
-        bgroupFlavour.add(jRadioButton2);
-        jRadioButton2.setText("Vanilla");
+        bgroupFlavour.add(rbVanilla);
+        rbVanilla.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rbVanilla.setText("Vanilla");
 
-        bgroupFlavour.add(jRadioButton3);
-        jRadioButton3.setText("Strawberry");
+        bgroupFlavour.add(rbStrawberry);
+        rbStrawberry.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        rbStrawberry.setText("Strawberry");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlIceCreamLayout = new javax.swing.GroupLayout(pnlIceCream);
+        pnlIceCream.setLayout(pnlIceCreamLayout);
+        pnlIceCreamLayout.setHorizontalGroup(
+            pnlIceCreamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIceCreamLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
+                .addGroup(pnlIceCreamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbStrawberry)
+                    .addComponent(rbVanilla)
+                    .addComponent(rbChocolate))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnlIceCreamLayout.setVerticalGroup(
+            pnlIceCreamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIceCreamLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
-                .addComponent(jRadioButton1)
+                .addComponent(rbChocolate)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(rbVanilla)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(rbStrawberry)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -269,17 +284,21 @@ public class MyIceCreamShop extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 0, 102));
         jLabel8.setText("TOTAL");
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 0, 102));
-        jButton4.setText("EXIT");
+        btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(255, 0, 102));
+        btnExit.setText("EXIT");
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 0, 102));
-        jButton5.setText("ORDER");
+        btnPlaceOrder.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPlaceOrder.setForeground(new java.awt.Color(255, 0, 102));
+        btnPlaceOrder.setText("ORDER");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlaceOrderActionPerformed(evt);
+            }
+        });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 0, 102));
-        jLabel9.setText("€ 1.50");
+        lblPrice.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblPrice.setForeground(new java.awt.Color(255, 0, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -290,22 +309,22 @@ public class MyIceCreamShop extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlFlavour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(btnPlaceOrder, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGap(18, 18, 18))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel8)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(3, 3, 3)))
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(pnlIceCream, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -317,29 +336,54 @@ public class MyIceCreamShop extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(pnlIceCream, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlFlavour, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                .addComponent(jLabel8))
+                            .addComponent(lblPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(26, 26, 26)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPlaceOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(57, 57, 57))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+
+       
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
+public void calculatePrice(){
+        Double price = 1.50;
+       
+        if (rbCone.isSelected()||btnCone.isSelected())
+        price = 1.50;
+        if (rbSundae.isSelected()|| btnSundae.isSelected())
+        price = 2.10;
+        if (rbBananaSplit.isSelected()|| btnBananaSplit.isSelected())
+        price = 2.50;
+        
+        if(cbFlake.isSelected())
+        price += .2;
+        if(cbSprinkles.isSelected())
+        price += .2;
+        if(cbSyrup.isSelected())
+        price += .2;
+        lblPrice.setText("€" + price);
+       System.out.println(price);
+
+}
     /**
      * @param args the command line arguments
      */
@@ -366,6 +410,9 @@ public class MyIceCreamShop extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MyIceCreamShop.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        MyIceCreamShop m = new MyIceCreamShop();
+        m.calculatePrice();
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -378,14 +425,14 @@ public class MyIceCreamShop extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgroupChoice;
     private javax.swing.ButtonGroup bgroupFlavour;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JButton btnBananaSplit;
+    private javax.swing.JButton btnCone;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnSundae;
+    private javax.swing.JCheckBox cbFlake;
+    private javax.swing.JCheckBox cbSprinkles;
+    private javax.swing.JCheckBox cbSyrup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -394,15 +441,15 @@ public class MyIceCreamShop extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JPanel pnlChoice;
+    private javax.swing.JPanel pnlFlavour;
+    private javax.swing.JPanel pnlIceCream;
+    private javax.swing.JRadioButton rbBananaSplit;
+    private javax.swing.JRadioButton rbChocolate;
+    private javax.swing.JRadioButton rbCone;
+    private javax.swing.JRadioButton rbStrawberry;
+    private javax.swing.JRadioButton rbSundae;
+    private javax.swing.JRadioButton rbVanilla;
     // End of variables declaration//GEN-END:variables
 }

@@ -444,7 +444,7 @@ private boolean appendToFile;
     }//GEN-LAST:event_cmbMealTypeActionPerformed
 
     private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
-       btnSaveToFile.setEnabled(true); // TODO add your handling code here:
+       btnSaveToFile.setEnabled(true); 
         String order = "";
         String options = lstOptions.getSelectedValuesList().toString().toLowerCase();
         order += options.substring(1,options.length()-1);
